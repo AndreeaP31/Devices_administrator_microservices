@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6131e969-6f75-4c16-a092-e6757020cfa1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/api_gateaway.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/dynamic/path.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/logs/access.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway/traefik.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/device_microservice" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-demo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_microservice" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="36119VYZRYJpJHVgN3ojejkVwvm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6131e969-6f75-4c16-a092-e6757020cfa1" name="Changes" comment="" />
+      <created>1764159112804</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764159112804</updated>
+      <workItem from="1764159114741" duration="3000" />
+    </task>
+    <servers />
+  </component>
+</project>
