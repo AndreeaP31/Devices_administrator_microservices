@@ -161,14 +161,14 @@ services:
       - user-service
       - device-service
 
-  frontend:
+  frontend-service:
     build:
       context: ../frontend
       dockerfile: Dockerfile
-    container_name: frontend
+    container_name: frontend-service
     restart: always
     ports:
-      - "5174:5173"
+      - "5174:80"
     networks:
       - demo_net
     depends_on:

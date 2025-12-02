@@ -7,17 +7,23 @@ http:
       service: gateway-service
       middlewares:
         - strip-api-prefix
+    frontend:
+      rule: "PathPrefix(`/myapp`)"
+      entryPoints:
+        - web
+      service: frontend-service
+      middlewares:
+        - strip-myapp-prefix
 
-  frontend:
-    rule: "PathPrefix(`/`)"
-    entryPoints:
-      - web
-    service: frontend-service
   middlewares:
     strip-api-prefix:
       stripPrefix:
         prefixes:
           - "/api"
+    strip-myapp-prefix:
+      stripPrefix:
+        prefixes:
+          - "/myapp"
 
   services:
     gateway-service:
@@ -27,4 +33,4 @@ http:
     frontend-service:
       loadBalancer:
         servers:
-          - url: "http://frontend:5173"
+          - url: "http://frontend-service:80"
