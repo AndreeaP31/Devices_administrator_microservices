@@ -28,6 +28,12 @@ public class AuthController {
         return ResponseEntity.ok(authService.getAllCredentials());
     }
 
+    @DeleteMapping("/internal/usercred/{userId}")
+    public ResponseEntity<Void> deleteCredentials(@PathVariable UUID userId) {
+        authService.deleteCredentialByUserId(userId);
+        return ResponseEntity.noContent().build();
+    }
+
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponseDTO> register(

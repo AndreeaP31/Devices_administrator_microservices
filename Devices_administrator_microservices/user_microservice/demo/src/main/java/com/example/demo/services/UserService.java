@@ -29,6 +29,8 @@ public class UserService {
     private final RestTemplate restTemplate = new RestTemplate();
     @Value("${device.service.url}")
     private String deviceServiceUrl;
+    @Value("${auth.service.url}")
+    private String authServiceUrl;
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -74,21 +76,32 @@ public class UserService {
     @Transactional
     public void deleteUser(UUID userId) {
         if (!userRepository.existsById(userId)) {
-            LOGGER.error("Delete failed: User with ID {} not found.", userId);
             throw new ResourceNotFoundException("User with id: " + userId + " not found.");
         }
 
-        String cleanupUrl = deviceServiceUrl + "/device/internal/relations/for-user/" + userId;
+        // 1️⃣ Ștergem credentialele din Auth-Service
         try {
-            restTemplate.delete(cleanupUrl);
-            LOGGER.debug("Successfully requested relation cleanup for user ID {}.", userId);
+            restTemplate.delete(authServiceUrl + "/auth/internal/usercred/" + userId);
+            LOGGER.debug("Credentials deleted for user {}", userId);
         } catch (Exception e) {
-            LOGGER.error("Could not contact Device-Service for relation cleanup.", e);
-            throw new IllegalStateException("Device-Service is unavailable. Cannot delete user at this time.");
+            LOGGER.error("Could not delete credentials for user {}", userId, e);
+            throw new IllegalStateException("Auth-Service unavailable, cannot delete user.");
         }
 
+        // 2️⃣ Ștergem relațiile device-user în Device-Service
+        try {
+            restTemplate.delete(deviceServiceUrl + "/device/internal/relations/" + userId);
+            LOGGER.debug("Device relations deleted for user {}", userId);
+        } catch (Exception e) {
+            LOGGER.error("Could not delete device relations for user {}", userId, e);
+            throw new IllegalStateException("Device-Service unavailable, cannot delete user.");
+        }
+
+        // 3️⃣ Ștergem user-ul efectiv
         userRepository.deleteById(userId);
-        LOGGER.debug("Successfully deleted user with ID {}.", userId);
+        LOGGER.debug("Successfully deleted user {}", userId);
     }
+
+
 
 }

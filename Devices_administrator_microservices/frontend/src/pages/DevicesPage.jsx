@@ -9,7 +9,7 @@ import {
 export default function DevicesPage() {
     const [devices, setDevices] = useState([]);
 
-    const [newDev, setNewDev] = useState({ name: "", maxCons: 0 });
+    const [newDev, setNewDev] = useState({ name: "", maxCons: ""});
     const [editId, setEditId] = useState(null);
     const [editDev, setEditDev] = useState({ name: "", maxCons: 0 });
 
@@ -31,7 +31,10 @@ export default function DevicesPage() {
     }
 
     async function handleSave(id) {
-        await updateDevice(id, editDev);
+        await updateDevice(id, {
+            name:editDev.name,
+            maxCons: Number(editDev.maxCons)
+        });
         setEditId(null);
 
         const updated = await getDevices();
@@ -79,7 +82,7 @@ export default function DevicesPage() {
                                 type="number"
                                 value={editDev.maxCons}
                                 onChange={(e) =>
-                                    setEditDev({ ...editDev, maxCons: Number(e.target.value) })
+                                    setEditDev({ ...editDev, maxCons: e.target.value })
                                 }
                             />
                             <button onClick={() => handleSave(d.id)}>Save</button>
@@ -97,7 +100,7 @@ export default function DevicesPage() {
                             <button
                                 onClick={() => {
                                     setEditId(d.id);
-                                    setEditDev({ name: d.name, maxCons: d.maxCons });
+                                    setEditDev({ name: d.name, maxCons: String(d.maxCons) });
                                 }}
                             >
                                 Edit

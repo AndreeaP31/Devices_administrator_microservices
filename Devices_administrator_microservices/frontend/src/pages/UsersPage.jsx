@@ -104,7 +104,6 @@ export default function UsersPage() {
                             <span>
                                 <strong>{u.name}</strong>
                                 <div className="muted">{u.username}</div>
-                                <div className="muted">Role: {u.role}</div>
                             </span>
 
                             <button
