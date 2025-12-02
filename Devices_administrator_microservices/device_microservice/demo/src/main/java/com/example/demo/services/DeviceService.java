@@ -4,6 +4,7 @@ package com.example.demo.services;
 import com.example.demo.dtos.DeviceDTO;
 import com.example.demo.dtos.DeviceDetailsDTO;
 import com.example.demo.dtos.DeviceUserRelationDTO;
+import com.example.demo.dtos.DeviceWithUsersDTO;
 import com.example.demo.dtos.builders.DeviceBuilder;
 import com.example.demo.entities.Device;
 import com.example.demo.entities.DeviceUserRelation;
@@ -19,10 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -54,6 +52,45 @@ public class DeviceService {
         }
         return DeviceBuilder.toDeviceDetailsDTO(prosumerOptional.get());
     }
+    public List<DeviceWithUsersDTO> getDevicesWithUsers() {
+
+        List<Device> devices = deviceRepository.findAll();
+
+        return devices.stream().map(device -> {
+
+            // relațiile pentru device
+            List<DeviceUserRelation> relations = relationRepository.findByDeviceId(device.getId());
+
+            // extragem userId-urile
+            List<UUID> userIds = relations.stream()
+                    .map(DeviceUserRelation::getUserId)
+                    .toList();
+
+            // apelăm user-service pentru numele userilor
+            List<String> userNames = userIds.stream().map(userId -> {
+                try {
+                    String url = userServiceUrl + "/users/" + userId;
+                    Map user = restTemplate.getForObject(url, Map.class);
+
+                    if (user != null && user.get("name") != null) {
+                        return user.get("name").toString();
+                    }
+                    return "(unknown)";
+                } catch (Exception e) {
+                    return "(unknown)";
+                }
+            }).toList();
+
+            return new DeviceWithUsersDTO(
+                    device.getId(),
+                    device.getName(),
+                    device.getMaxCons(),
+                    userNames
+            );
+
+        }).toList();
+    }
+
 
     public UUID insert(DeviceDetailsDTO DeviceDTO) {
         Device Device = DeviceBuilder.toEntity(DeviceDTO);

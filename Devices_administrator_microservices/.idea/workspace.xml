@@ -1,18 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6131e969-6f75-4c16-a092-e6757020cfa1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/api_gateaway.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/dynamic/path.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/logs/access.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateaway/traefik.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/device_microservice" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-demo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_microservice" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/.idea/device_microservice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/CachedBodyHttpServletRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/FilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/GatewayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateaway_microservice/demo/src/main/java/com/example/demo/RoleFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/device_microservice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/controllers/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/AuthResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/CredentialInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/LoginRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/RegisterRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/TokenValidationResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/dtos/builders/CredentialBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/entities/Credential.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/repositories/CredentialRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_microservice/demo/src/main/java/com/example/demo/services/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/device_microservice/demo/src/main/java/com/example/demo/dtos/DeviceWithUsersDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AssignPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ClientDashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/DevicesPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/UsersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trefik_config/.idea/traefik_config.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_microservice/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/.idea/api_gateaway.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/dynamic/path.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/logs/access.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateaway/traefik.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/device_microservice/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/device_microservice/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device_microservice/demo/src/main/java/com/example/demo/controllers/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/device_microservice/demo/src/main/java/com/example/demo/controllers/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device_microservice/demo/src/main/java/com/example/demo/services/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/device_microservice/demo/src/main/java/com/example/demo/services/DeviceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device_microservice/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/device_microservice/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/public/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/api/rest-client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/errorhandling/api-response-error-message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/errorhandling/error-boundary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/errorhandling/error-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/hosts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/images/future-medicine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/images/medical-transparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/styles/project-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/tables/fields/Field.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/tables/fields/styles/field-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/tables/fields/styles/json-styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/tables/tabelLibrary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/commons/tables/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/home/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/navigation-bar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/person/api/person-api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/person/components/person-form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/person/components/person-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/person/components/validators/person-validators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/person/person-container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-demo/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_microservice/.idea/data_source_mapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_microservice/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user_microservice/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_microservice/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_microservice/demo/src/main/java/com/example/demo/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_microservice/demo/src/main/java/com/example/demo/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_microservice/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user_microservice/demo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,23 +112,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="36119VYZRYJpJHVgN3ojejkVwvm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/practica/facultate/an 4/sem1/sd_nou/git/Devices_administrator_microservices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\practica\facultate\an 4\sem1\sd_nou\git\Devices_administrator_microservices" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -53,7 +163,12 @@
       <option name="presentableId" value="Default" />
       <updated>1764159112804</updated>
       <workItem from="1764159114741" duration="3000" />
+      <workItem from="1764203030178" duration="2118000" />
+      <workItem from="1764235690611" duration="1657000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

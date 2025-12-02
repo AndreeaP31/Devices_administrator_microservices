@@ -36,15 +36,20 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> create(@Valid @RequestBody UserDetailsDTO User) {
-        UUID id = userService.insert(User);
+    public ResponseEntity<UserDTO> create(@Valid @RequestBody UserDetailsDTO userDetails) {
+        UUID id = userService.insert(userDetails);
+
+        UserDTO dto = new UserDTO(id, userDetails.getName());
+
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(id)
                 .toUri();
-        return ResponseEntity.created(location).build(); // 201 + Location header
+
+        return ResponseEntity.created(location).body(dto);
     }
+
 
     // În UserController.java
 

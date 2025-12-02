@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.dtos.DeviceDTO;
 import com.example.demo.dtos.DeviceDetailsDTO;
 import com.example.demo.dtos.DeviceUserRelationDTO;
+import com.example.demo.dtos.DeviceWithUsersDTO;
 import com.example.demo.entities.DeviceUserRelation;
 import com.example.demo.services.DeviceService;
 import jakarta.validation.Valid;
@@ -52,6 +53,11 @@ public class DeviceController {
     public List<DeviceUserRelation> getDevicesForUser(@PathVariable UUID userId) {
         return deviceService.getDevicesForUser(userId);
     }
+    @GetMapping("/with-users")
+    public List<DeviceWithUsersDTO> getDevicesWithUsers() {
+        return deviceService.getDevicesWithUsers();
+    }
+
 
     @GetMapping("/{deviceId}/users")
     public List<DeviceUserRelation> getUsersForDevice(@PathVariable UUID deviceId) {
