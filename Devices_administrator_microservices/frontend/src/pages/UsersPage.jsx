@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { getUsers, deleteUser, updateUser } from "../api";
+import { getUsers, deleteUser, updateUser, registerUser } from "../api";
 
 export default function UsersPage() {
     const [users, setUsers] = useState([]);
+
     const [editId, setEditId] = useState(null);
     const [editName, setEditName] = useState("");
 
+    // 🔥 Formular creare user simplificat
+    const [newUser, setNewUser] = useState({
+        name: "",
+        username: "",
+        password: ""
+    });
+
     async function load() {
-        try {
-            const data = await getUsers();
-            setUsers(data);
-        } catch (err) {
-            console.error("Failed loading users", err);
-        }
+        const data = await getUsers();
+        setUsers(data);
     }
 
     async function handleDelete(id) {
@@ -26,6 +30,22 @@ export default function UsersPage() {
         load();
     }
 
+    async function handleCreate(e) {
+        e.preventDefault();
+
+        await registerUser({
+            ...newUser,
+            role: "CLIENT"     // 🔥 role automat USER
+        });
+
+        alert("User created!");
+
+        // reset formular
+        setNewUser({ name: "", username: "", password: "" });
+
+        load();
+    }
+
     useEffect(() => {
         load();
     }, []);
@@ -34,6 +54,38 @@ export default function UsersPage() {
         <div className="card">
             <h2>Users</h2>
 
+            {/* 🔥 CREATE USER — inline row */}
+            <form onSubmit={handleCreate} className="list-row" style={{ gap: "10px" }}>
+                <input
+                    placeholder="Name"
+                    value={newUser.name}
+                    onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+                    required
+                />
+
+                <input
+                    placeholder="Username"
+                    value={newUser.username}
+                    onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
+                    required
+                />
+
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={newUser.password}
+                    onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+                    required
+                />
+
+                <button style={{ whiteSpace: "nowrap" }}>
+                    Create
+                </button>
+            </form>
+
+            <hr />
+
+            {/* 🔥 Users list */}
             {users.map((u) => (
                 <div className="list-row" key={u.id}>
                     {editId === u.id ? (
@@ -49,10 +101,11 @@ export default function UsersPage() {
                         </>
                     ) : (
                         <>
-              <span>
-                <strong>{u.name}</strong>
-                <div className="muted">{u.id}</div>
-              </span>
+                            <span>
+                                <strong>{u.name}</strong>
+                                <div className="muted">{u.username}</div>
+                                <div className="muted">Role: {u.role}</div>
+                            </span>
 
                             <button
                                 onClick={() => {

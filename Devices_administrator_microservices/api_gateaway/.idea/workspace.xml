@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1813bcc1-fc70-44e5-b6cf-898e65969981" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../device_microservice/demo/src/main/java/com/example/demo/dtos/RelationDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trefik_config/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../trefik_config/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trefik_config/dynamic/path.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../trefik_config/dynamic/path.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../device_microservice/demo/src/main/java/com/example/demo/controllers/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../device_microservice/demo/src/main/java/com/example/demo/controllers/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../device_microservice/demo/src/main/java/com/example/demo/services/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../device_microservice/demo/src/main/java/com/example/demo/services/DeviceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/AssignPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/AssignPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/DevicesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/DevicesPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/UsersPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/UsersPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trefik_config/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../trefik_config/logs/access.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +65,19 @@
       <recent name="D:\practica\facultate\an 4\sem1\sd\git_demo\api_gateaway\user-backend" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="api_gateaway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="api_gateaway" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,6 +112,7 @@
       <workItem from="1764195018149" duration="17000" />
       <workItem from="1764229604087" duration="884000" />
       <workItem from="1764672630898" duration="677000" />
+      <workItem from="1764686980376" duration="598000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,7 @@
 package com.example.demo.services;
 
 
-import com.example.demo.dtos.DeviceDTO;
-import com.example.demo.dtos.DeviceDetailsDTO;
-import com.example.demo.dtos.DeviceUserRelationDTO;
-import com.example.demo.dtos.DeviceWithUsersDTO;
+import com.example.demo.dtos.*;
 import com.example.demo.dtos.builders.DeviceBuilder;
 import com.example.demo.entities.Device;
 import com.example.demo.entities.DeviceUserRelation;
@@ -86,6 +83,54 @@ public class DeviceService {
                     device.getName(),
                     device.getMaxCons(),
                     userNames
+            );
+
+        }).toList();
+    }
+
+    public List<RelationDTO> getAllRelationsWithNames() {
+
+        List<DeviceUserRelation> relations = relationRepository.findAll();
+
+        return relations.stream().map(relation -> {
+
+            // -------------------------
+            // 1. Luăm numele userului
+            // -------------------------
+            String userName = "(unknown)";
+            try {
+                String url = userServiceUrl + "/users/" + relation.getUserId();
+                Map user = restTemplate.getForObject(url, Map.class);
+
+                if (user != null && user.get("name") != null) {
+                    userName = user.get("name").toString();
+                }
+            } catch (Exception e) {
+                userName = "(unknown)";
+            }
+
+            // -------------------------
+            // 2. Luăm numele device-ului
+            // -------------------------
+            String deviceName = "(unknown)";
+            try {
+                Device device = deviceRepository.findById(relation.getDeviceId())
+                        .orElse(null);
+
+                if (device != null) {
+                    deviceName = device.getName();
+                }
+
+            } catch (Exception e) {
+                deviceName = "(unknown)";
+            }
+
+            return new RelationDTO(
+                    relation.getId(),
+                    relation.getUserId(),
+                    relation.getDeviceId(),
+                    userName,
+                    deviceName
             );
 
         }).toList();

@@ -1,9 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.dtos.DeviceDTO;
-import com.example.demo.dtos.DeviceDetailsDTO;
-import com.example.demo.dtos.DeviceUserRelationDTO;
-import com.example.demo.dtos.DeviceWithUsersDTO;
+import com.example.demo.dtos.*;
 import com.example.demo.entities.DeviceUserRelation;
 import com.example.demo.services.DeviceService;
 import jakarta.validation.Valid;
@@ -75,6 +72,11 @@ public class DeviceController {
         DeviceDetailsDTO updatedDevice = deviceService.updateDevice(id, deviceDetailsDTO);
         return ResponseEntity.ok(updatedDevice);
     }
+    @GetMapping("/relations")
+    public ResponseEntity<List<RelationDTO>> getAllRelations() {
+        return ResponseEntity.ok(deviceService.getAllRelationsWithNames());
+    }
+
 
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody DeviceDetailsDTO Device) {

@@ -64,6 +64,9 @@ export function createDevice(data) {
     // { name, maxCons }
     return apiRequest("POST", "/device", data);
 }
+export function getRelations() {
+    return apiRequest("GET", "/device/relations");
+}
 
 export function updateDevice(id, data) {
     return apiRequest("PUT", `/device/${id}`, data);

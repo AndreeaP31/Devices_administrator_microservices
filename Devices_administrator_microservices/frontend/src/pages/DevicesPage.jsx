@@ -3,30 +3,21 @@ import {
     getDevices,
     deleteDevice,
     createDevice,
-    updateDevice,
-    assignDevice,
-    getUsers
+    updateDevice
 } from "../api";
 
 export default function DevicesPage() {
     const [devices, setDevices] = useState([]);
-    const [users, setUsers] = useState([]);
 
     const [newDev, setNewDev] = useState({ name: "", maxCons: 0 });
     const [editId, setEditId] = useState(null);
     const [editDev, setEditDev] = useState({ name: "", maxCons: 0 });
 
-    const [assignUserId, setAssignUserId] = useState("");
-
     useEffect(() => {
         async function load() {
             const devList = await getDevices();
-            const usrList = await getUsers();
-
             setDevices(devList);
-            setUsers(usrList);
         }
-
         load();
     }, []);
 
@@ -35,7 +26,6 @@ export default function DevicesPage() {
         await createDevice(newDev);
         setNewDev({ name: "", maxCons: 0 });
 
-        // reload
         const updated = await getDevices();
         setDevices(updated);
     }
@@ -46,13 +36,6 @@ export default function DevicesPage() {
 
         const updated = await getDevices();
         setDevices(updated);
-    }
-
-    async function handleAssign(deviceId) {
-        if (!assignUserId) return alert("Please select a user");
-
-        await assignDevice(assignUserId, deviceId);
-        alert("Assigned!");
     }
 
     return (
@@ -106,21 +89,10 @@ export default function DevicesPage() {
                         </>
                     ) : (
                         <>
-              <span>
-                <strong>{d.name}</strong>
-                <div className="muted">Max: {d.maxCons}</div>
-              </span>
-
-                            <select onChange={(e) => setAssignUserId(e.target.value)}>
-                                <option value="">Assign to user…</option>
-                                {users.map((u) => (
-                                    <option value={u.id} key={u.id}>
-                                        {u.name}
-                                    </option>
-                                ))}
-                            </select>
-
-                            <button onClick={() => handleAssign(d.id)}>Assign</button>
+                            <span>
+                                <strong>{d.name}</strong>
+                                <div className="muted">Max: {d.maxCons}</div>
+                            </span>
 
                             <button
                                 onClick={() => {
